@@ -133,15 +133,16 @@ void platosMet(){
                 }else{
                     Vingredientes.push_back(bodegaTemp->Vingredientes[op]);
                 }
-                cout<<"Agregara otra comida[s/n]:"<<endl;
-                cin>>seguir;
-                if(seguir=='s'|| seguir=='S'){
+                //cout<<"Agregara otra comida[y/n]:"<<endl;
+                //cin>>seguir;
+                /*
+                if(seguir=='y'|| seguir=='Y'){
                     bandera=true;
                 }else{
                     bandera=false;
                 }
             }while(bandera==true);
-            
+            */
             for(int i=0;Vingredientes.size();i++){
                if(i=0){
                    sabor=Vingredientes[i]->getCantidadSabor();
@@ -165,11 +166,4 @@ void platosMet(){
             cout<<"Opcion no definida"<<endl;
         break;
     }
-}
-void compraMet(){
-
-}
-
-void clienteMet(){
-
 }
