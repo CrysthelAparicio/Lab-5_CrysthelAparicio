@@ -3,74 +3,53 @@
 #include <string>
 using namespace std;
 
-platos::platos(){
+platos::platos(ingredientes* ingre,string presena,int pcantidad_s,int pregistro,int pprecio,int pvalor,string pnombre){
+        Vingredientes.push_back(ingre);
+        cantidad_sabor=+pcantidad_s;
+        registro=+pregistro;
+        precio=pprecio;
+        valor_promedio=pvalor;
+        resena=presena;
+        nombre=pnombre;
 
 }
-
-platos::platos(ingredientes* ingre, int pCantidad, int pRegistro, int pPrecio, int pValorPromedio){
-   Vingredientes.push_back(ingre);
-   cantidadSabor = pCantidad;
-   registro = pRegistro;
-   precio = pPrecio;
-   valorPromedio = pValorPromedio;
-}
-
-ingredientes* platos::getIngredientes(int i){
+ingredientes* platos::getingredientes(int i){
     return Vingredientes[i];
 }
-
-string platos::getResena(){
-    return resena;
+ string platos::getresena(){
+     return resena;
+ }
+ string platos::getnombre(){
+     return nombre;
+ }
+int platos::getcantidad_sabor(){
+    return cantidad_sabor;
 }
-
-int platos::getCantidadSabor(){
-    return cantidadSabor;
-}
-
-int platos::getRegistro(){
+int platos::getregistro(){
     return registro;
 }
-
-int platos::getPrecio(){
+int platos::getprecio(){
     return precio;
 }
-
-int platos::getValorPromedio(){
-    return valorPromedio;
+int platos::getvalor_promedio(){
+    return valor_promedio;
 }
-
-
-/////
-void platos::setIngredientres(ingredientes* ingre){
+ 
+void platos::setingredientes(ingredientes* ingre){
     Vingredientes.push_back(ingre);
 }
-
-void platos::setResena(string pResena){
-    resena = pResena;
+void platos::setcantidad_sabor(int cantidad){
+    cantidad_sabor=+cantidad;
+} 
+void platos::setregistro(int reg){
+    registro=+reg;
 }
-
-void platos::setCantidadSabor(int pCantidadSabor){
-    cantidadSabor = pCantidadSabor;
+void platos::setprecio(int p){
+    precio=p;
 }
-
-void platos::setRegistro(int pRegistro){
-    registro = pRegistro;
+void platos::setvalor_promedio(int v){
+    valor_promedio=v;
 }
-
-void platos::setPrecio(int pPrecio){
-    precio = pPrecio;
+void platos::setnombre(string v){
+    nombre=v;
 }
-
-void platos::setValorPromedio(int pValorPromedio){
-    valorPromedio = pValorPromedio;
-}
-
-/*
-platos::platos(string pResena, int pCantidadSabor, int pRegistro, int pPrecio, int pValorPromedio){
-    nombre = pNombre;
-    cantidad = pCantidad;
-    tipo = pTipo;
-    cantidadSabor = pCantidadSabor;
-    duracion = pDuracion;
-}
-*/

@@ -9,6 +9,7 @@ using std::cin;
 using std::endl;
 using std::vector;
 
+int platatitos=0;
 void ingredientesMet();
 void platosMet();
 void compra();
@@ -39,7 +40,7 @@ int main()
                                ingredientesMet();
                                 break;
                         case 2:
-                               
+                               platosMet();
                                 break;
                         case 3:
                                 
@@ -85,7 +86,6 @@ void ingredientesMet()
         cout<<"Duracion del Ingrediente"<<endl;
         cin>>duracion;
         ingre = new ingredientes(nombre,cantidad,tipo,cantidadSabor,duracion);
-       
         bodegaTemp->setIngredientres(ingre);
         break;
 
@@ -101,59 +101,75 @@ void ingredientesMet()
 }
 
 void platosMet(){
-    platos* pl;
-    char resp string resena="";
-    int cantidadSabor=0 , registro=0, precio=0, valorPromedio=0;
-    cout<<"1.Crear Platos\n2.Listar Platos\n";
-    cin>>resp;
-
-    switch(resp)
-    {
+    platos* p;
+    char tecla;
+    int cont=0;
+    string re="",nombre="";
+    int sabor=0,registro=0,precio=0,valor=0;
+    int op;
+    bool bandera=true;
+    char seguir;
+            
+    cout<<"1.Crear Platos\n2.Listar Platos"<<endl;
+    cin>>tecla;
+    switch(tecla){
         case '1':
-        int op;
-        char sigue;
-        int cont = 0;
-        bool bade = true
-        do{
-
-        for(int i = 0; i < bodegaTemp->Vingredientes.size(); i++)
-        {
-            cout<<"["<<bodegaTemp->Vingredientes(i)->getNombre()<<"]";
-            cont++;
-        }
-        cout<<"Ingrese los Ingredientes para el Plato"<<endl;
-        cin>>op;
-        if(op<0||op>bodegaTemp->Vingredientes.size()){
-            cout<<"Opcion no definida"
-        }else{
-           if(bodegaTemp->Vingredientes[op]->getCantidad()>0){
-               int cantidadTotal = bodegaTemp->Vingredientes[op]->getCantidad();
-               pl=new platos
-           }
-           
-        }
-
-        cout<<"Usted agregara comida[y/n]:"<<endl;
-        cin>>sigue;
-        
-        if(sigue=='y'||sigue=='Y'){
-            bade = true;
-        }else{
-            bade = false;
-        }
-
-    }
-
-  }
-
-}while(bade==true);
-
-  cout<<endl;
-  break;
+            cout<<"Nombre del Plato\n"<<endl;
+            cin>>nombre;
+            cout<<"su reseña:"<<endl;
+            cin>>re;
+            cout<<"su precio:"<<endl;
+            cin>>precio;
+            do{
+                
+                for(int i=0;i<bodegaTemp->Vingredientes.size();i++){
+                cout<<cont<<".["<<bodegaTemp->getIngredientes(i)->getNombre()<<"]"<<endl;
+                cont++;
+                }
+                cout<<"Escriba los Ingredientes para los platos\n"<<endl;
+                cin>>op;
+                if(op<0||op>bodegaTemp->Vingredientes.size()){
+                    cout<<"opcion invalidad"<<endl;
+                }else{
+                    Vingredientes.push_back(bodegaTemp->Vingredientes[op]);
+                }
+                cout<<"Agregara otra comida[s/n]:"<<endl;
+                cin>>seguir;
+                if(seguir=='s'|| seguir=='S'){
+                    bandera=true;
+                }else{
+                    bandera=false;
+                }
+            }while(bandera==true);
+            
+            for(int i=0;Vingredientes.size();i++){
+               if(i=0){
+                   sabor=Vingredientes[i]->getCantidadSabor();
+                   p=new platos(Vingredientes[i],re,sabor,registro,precio,valor,nombre);
+                   Vplatos.push_back(p);
+               }
+            }
+              for(int i=0;Vingredientes.size();i++){
+                  delete Vingredientes[i];
+              }
+              Vingredientes.clear();
+            cout<<endl;
+            break;
      case '2':
+        for(int i=0;i<Vplatos.size();i++){
+                cout<<"["<<Vplatos[i]->getnombre()<<"]";
+            }
+            cout<<endl;
+            break;
+        default:
+            cout<<"Opcion no definida"<<endl;
+        break;
+    }
+}
+void compraMet(){
 
-     break;
+}
 
-void compra(){
+void clienteMet(){
 
 }

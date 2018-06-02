@@ -1,41 +1,41 @@
-#include <iostream>
-#include <string>
-#include <vector>
-using std::string;
+#ifndef PLATOS_H
+#define PLATOS_H
+
+#include<iostream>
+#include<string>
+#include<vector>
 #include "ingredientes.h"
-#ifndef Platos_H
-#define Platos_H
 using namespace std;
+using std::string;
 
 class platos{
     private:
-    vector<ingredientes*> Vingredientes;
-    string resena;
-    int cantidadSabor=0;
-    int registro=0;
-    int precio;
-    int valorPromedio;
+
+        vector<ingredientes*> Vingredientes;
+        string resena;
+        int cantidad_sabor;
+        int registro;
+        int precio;
+        int valor_promedio;
+        string nombre;
 
     public:
-
-    platos();
-    ~platos();
-    platos(ingredientes*,string,int,int,int,int)
-
-    ingredientes* getIngredientes(int);
-    void setIngredientres(ingredientes*);
-
-    string getResena();
-    int getCantidadSabor();
-    int getRegistro();
-    int getPrecio();
-    int getValorPromedio();
-    
-    void setResena(string);
-    void setCantidadSabor(int);
-    void setRegistro(int);
-    void setPrecio(int);
-    void setValorPromedio(int);
-
+        platos(ingredientes*,string,int,int,int ,int,string );
+        ingredientes* getingredientes(int);
+        string getresena();
+        string getnombre();
+        int getcantidad_sabor();
+        int getregistro();
+        int getprecio();
+        int getvalor_promedio();
+        
+        void setingredientes(ingredientes*);
+        void setcantidad_sabor(int);
+        void setregistro(int);
+        void setprecio(int);
+        void setvalor_promedio(int);
+        void setnombre(string);
+          
 };
 #endif
+
